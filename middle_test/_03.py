@@ -18,9 +18,7 @@ class TempQueue:
             while self.stack_in:
                 temp = self.stack_in.pop()
                 self.stack_out.append(temp)
-            return self.stack_out.pop()
-
-if __name__ == '__main__':
+            return self.staccu
 
     q = TempQueue()
 
