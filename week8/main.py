@@ -92,3 +92,8 @@ if __name__ == "__main__":
 
     tree.build("( A ( B ( C ( D ( E # ) # ) # ) # ) )".split())
     print_tree(tree)
+
+    sexpr = "( A ( B ( D ( H I ) E ) C ( F G ) ) )".split()
+        
+    tree.build(sexpr)
+    print_tree(tree)

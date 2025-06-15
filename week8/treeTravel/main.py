@@ -93,6 +93,29 @@ def traverse(tree: TreeBinary = None) -> List[TreeBinary.Node]:
 
     return ret
 
+def traverse_pre(now : TreeBinary.Node = None, ret : List[TreeBinary.Node] = None) -> List[TreeBinary.Node]:
+    if now == None:
+        return ret
+
+
+    ret.append(now)
+    ret = traverse_pre(now.left, ret)
+    ret = traverse_pre(now.right, ret)
+
+
+    return ret
+
+def traverse_in(now, ret):
+
+    if now == None:
+        return ret
+
+    ret = traverse_in(now.left, ret)
+    ret.append(now)
+    ret = traverse_in(now.right, ret)
+
+    return ret
+
 
 if __name__ == "__main__":
     tree = TreeBinary()
@@ -102,3 +125,7 @@ if __name__ == "__main__":
     actions = traverse(tree)
 
     print(actions)
+
+
+    print( traverse_pre(tree.root, []))
+    print( traverse_in(tree.root, []))

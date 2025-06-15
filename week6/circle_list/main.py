@@ -112,23 +112,16 @@ class ListLinkedSingly:
         prev_node = None
 
         if self.head_.data == tgt:
-            prev_node = self.head_
             node = Node(data, self.head_.link)
-            prev_node.link = node
+            self.head_.link = node
             return
 
         # find node
         for item in self.head_:
-            if item.link.data == tgt:
-                find_node = item.link
-                prev_node = item
-                next_node = item.link.link
-                break
-        # print(prev_node.data)
-        # print(find_node.data)
-
-        node = Node(data,find_node)
-        prev_node.link = node
+            if item.data == tgt:
+                node = Node(data,item.link)
+                item.link = node
+                return
 
     def delete(self, tgt:int):
         prev_node = None
